@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class PrimeiroExemplo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         // seta o gecko driver no classpath do prorama
         boolean windows = System.getProperty("os.name").toUpperCase().contains("WIN");
@@ -22,6 +22,8 @@ public class PrimeiroExemplo {
 
         //obtem e clica no link da página de download
         driver.findElement(By.id("menu_download")).click();
+
+        Thread.sleep(1000);
 
         // fecha todas as janelas do navegador e finaliza a sessão do WebDriver
         driver.quit();
