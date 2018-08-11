@@ -8,7 +8,9 @@ import org.openqa.selenium.support.ui.Select;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
+/**
+ * @author danielduarte
+ * */
 public class LancamentoPage {
 
     private WebDriver driver;

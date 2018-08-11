@@ -18,6 +18,9 @@ import java.util.Random;
 
 import static org.testng.Assert.assertTrue;
 
+/**
+ * @author danielduarte
+ * */
 public class LancamentoTest {
 
     private WebDriver driver;
@@ -64,16 +67,22 @@ public class LancamentoTest {
         return descricaoLancamento;
     }
 
-    //Fluxo 1
+    /**
+     * FLUXO 01
+     * Cria Lancamento
+     * */
     @Test
-    public void criaLancamento(){
+    public void executaFluxo01(){
         String descricaoLancamento = cadastraLancamento();
         assertTrue(listaLancamentosPage.validaLancamento(descricaoLancamento),"Registro não cadastado/atualizado!");
     }
 
-    //Fluxo 2
+    /**
+     * FLUXO 02
+     * Edita Lancamento
+     * */
     @Test
-    public void editaLancamento(){
+    public void executaFluxo02(){
         listaLancamentosPage.acessa();
         listaLancamentosPage.editaLancamento();
 
@@ -93,9 +102,12 @@ public class LancamentoTest {
         assertTrue(listaLancamentosPage.validaLancamento(" [EDITADO em " + dataHora.format(formatoLancamento) + "]"),"Registro não cadastado/atualizado!");
     }
 
-    //Fluxo 3
+    /**
+     * FLUXO 03
+     * Remove Lancamento
+     * */
     @Test
-    public void removeLancamento(){
+    public void executaFluxo03(){
         String valorInserido = cadastraLancamento();
         Boolean validaInsercao = listaLancamentosPage.validaLancamento(valorInserido);
         assertTrue(validaInsercao,"Registro não cadastado/atualizado!");
@@ -108,21 +120,32 @@ public class LancamentoTest {
                 validaRemocao = true;
             }
             assertTrue(validaRemocao,"Registro não removido");
+            // Professor, aqui esta ocorrendo uma falha, devido ao possível BUG no código do projeto test-software
+            // O mesmo quando removemos um registro, depois realizamos uma busca (para validar a remocao) e não retorna nenhum registro,
+            // Não esta atualizando o Total de Registros na Tela, fica exibindo o total anterior.
+            // E isso comprometeu a forma como estou fazendo meu teste.
+
         }
     }
 
-    // Fluxo 4
+    /**
+     * FLUXO 04
+     * Acessa Relatorio
+     * */
     @Test
-    public void acessaRelatorio(){
+    public void executaFluxo04(){
         String valorInserido = cadastraLancamento();
         Boolean validaInsercao = listaLancamentosPage.validaLancamento(valorInserido);
         assertTrue(validaInsercao,"Registro não cadastado/atualizado!");
         listaLancamentosPage.acessaRelatorio();
     }
 
-    // Fluxo 5
+    /**
+     * FLUXO 05
+     * Acessa Novo Lancamento, Cancela e Recarrega
+     * */
     @Test
-    public void acessaCancela(){
+    public void executaFluxo05(){
         listaLancamentosPage.acessa();
         listaLancamentosPage.novoLancamento();
         listaLancamentosPage.salvarLancamento();

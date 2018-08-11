@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suíte-Tests por Classes" >
+    <test name="Teste por classes - Fluxos exigidos do Trabalho 01 - Selenium">
+        <classes>
+            <class name="br.ucdb.pos.engenhariasoftware.testesoftware.automacao.selenium.webdriver.LancamentoTest">
+                <methods>
+                    <include name="executaFluxo01" />
+                    <include name="executaFluxo02" />
+                    <include name="executaFluxo03" />
+                    <include name="executaFluxo04" />
+                    <include name="executaFluxo05" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

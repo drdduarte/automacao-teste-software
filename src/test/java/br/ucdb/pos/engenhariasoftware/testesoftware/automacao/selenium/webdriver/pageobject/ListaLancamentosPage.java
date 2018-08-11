@@ -8,7 +8,9 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
+/**
+ * @author danielduarte
+ * */
 public class ListaLancamentosPage {
 
     private WebDriver driver;
