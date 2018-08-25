@@ -1,0 +1,17 @@
+Plugins instalados:
+
+3 Basic Graphs
+# jpgc-graphs-basic
+> https://jmeter-plugins.org/?search=jpgc-graphs-basic
+- Response Times Over Time
+- Transactions per Second
+
+5 Additional Graphs
+# jpgc-graphs-additional
+> https://jmeter-plugins.org/?search=jpgc-graphs-additional
+- Bytes Throughput Over Time
+- Response Codes per Second
+
+> jmeter-plugins-manager-0.20.jar
+> jmeter-plugins-graphs-basic-2.0.jar
+> jmeter-plugins-graphs-additional-2.0.jar
